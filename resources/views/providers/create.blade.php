@@ -14,7 +14,7 @@
             <input class="rounded-lg" type="text" name="url" placeholder="Website URL">
         </div>
         <div>
-            <button class="p-2 text-sm text-white bg-blue-800 rounded-lg" type="button">Save</button>
+            <button class="p-2 text-sm text-white bg-blue-800 rounded-lg" type="submit">Save</button>
         </div>
     </form>
 </div>
