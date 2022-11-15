@@ -14,6 +14,7 @@
                     <th>Name</th>
                     <th>Created</th>
                     <th>Updated</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                         <td class="p-2 border"><a href="{{ $provider->url }}">{{ $provider->name }}</a></td>
                         <td class="p-2 text-center border">{{ $provider->created_at->diffForHumans() }}</td>
                         <td class="p-2 text-center border">{{ $provider->updated_at->diffForHumans() }}</td>
+                        <td class="p-2 text-center border"><a href="{{ route('providers.edit', ['provider' => $provider->id]) }}">Edit</a></td>
                     </tr>
                 @endforeach
             </tbody>
