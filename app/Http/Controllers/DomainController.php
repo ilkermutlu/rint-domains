@@ -64,7 +64,13 @@ class DomainController extends Controller
      */
     public function edit($id)
     {
-        //
+        $domain = Domain::find($id);
+        $providers = Provider::all()->pluck('name', 'id');
+
+        return view('domains.edit', [
+            'domain' => $domain,
+            'providers' => $providers,
+        ]);
     }
 
     /**
@@ -76,7 +82,9 @@ class DomainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $domain = Domain::find($id)->update($request->all());
+
+        return redirect()->route('domains.index');
     }
 
     /**
