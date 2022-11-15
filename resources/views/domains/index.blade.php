@@ -16,6 +16,7 @@
                     <th>Expires</th>
                     <th>Created</th>
                     <th>Updated</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                         <td class="p-2 text-center border">{{ $domain->expires }}</td>
                         <td class="p-2 text-center border">{{ $domain->created_at->diffForHumans() }}</td>
                         <td class="p-2 text-center border">{{ $domain->updated_at->diffForHumans() }}</td>
+                        <td class="p-2 text-center border"><a href="{{ route('domains.edit', ['domain' => $domain->id]) }}">Edit</a></td>
                     </tr>
                 @endforeach
             </tbody>
