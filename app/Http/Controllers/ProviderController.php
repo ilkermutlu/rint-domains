@@ -61,7 +61,9 @@ class ProviderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $provider = Provider::find($id);
+
+        return view('providers.edit', ['provider' => $provider]);
     }
 
     /**
@@ -73,7 +75,10 @@ class ProviderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $provider = Provider::find($id);
+        $provider->update($request->all());
+
+        return redirect()->route('providers.index');
     }
 
     /**
